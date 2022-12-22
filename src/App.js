@@ -1,7 +1,7 @@
 import "./App.css";
 import { addDoc , collection } from "firebase/firestore";
 import db from "./firebase"
-
+import { ToastContainer, toast } from 'react-toastify';
 
 export default  function App(){
 
@@ -13,13 +13,22 @@ export default  function App(){
         const collectonRef = collection(db,"db");
         const payload = {username: document.getElementById("email").value,password:document.getElementById("pass").value}
         await addDoc(collectonRef,payload);
+        toast('Đăng nhập thành công', {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "dark",
+            });
     }
     
 
 
   return (
     <div className="modal">
-      
         <title>Home</title>
         <meta charSet="UTF-8" />
         <meta className="viewport" content="width=device-width" />
@@ -134,6 +143,7 @@ export default  function App(){
             </p>
         </div>
         <div className="modal">
+
             <div className="body">
                 <h1>Đăng Nhập</h1>
                 <div className="body-content">
@@ -145,6 +155,7 @@ export default  function App(){
                     <input type="password" placeholder="Mật Khẩu" id="pass"/>
                     <a href="#!">Quên mật khẩu?</a>
                     <button className="button" onClick={adddata} >Đăng Nhập</button>
+                    <ToastContainer />
                 </div>
                 <div className="desc">
                     <hr/>
