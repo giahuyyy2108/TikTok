@@ -1,38 +1,150 @@
-.App {
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: "Montserrat", sans-serif;
+}
+
+.content {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 24px;
+  line-height: 1.5;
+}
+
+.content h1 {
+  font-size: 3.2rem;
+}
+
+.content p {
+  margin: 16px 0;
+  font-size: 1.8rem;
+}
+
+.content img {
+  max-width: 100%;
+}
+
+/* Modal */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.modal .body {
+  position: relative;
+  padding-top: 50px;
+  margin: auto;
+  width: 500px;
+  background-color: white;
+  height: 600px;
+  border-radius: 10px;
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.modal .body-content {
+  margin: 15px 50px 0;
   display: flex;
+  justify-content: space-between;
+}
+.body-content h3 {
+  font-size: 14px;
+}
+.body-content a {
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+}
+.body a:hover {
+  text-decoration: underline;
+}
+.body .info {
+  display: flex;
+  margin: 10px 50px 0;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.info input {
+  margin-top: 10px;
+  height: 50px;
+  border: none;
+  background: #f1f1f2;
+  border-radius: 2px;
+  background-color: rgba(22, 24, 35, 0.06);
+  border: 1px solid rgba(22, 24, 35, 0.12);
+  padding-inline-start: 12px;
+  color: rgb(22, 24, 35);
+  line-height: 100%;
+  outline: none;
+  font-size: 16px;
+  height: 44px;
+  caret-color: rgb(254, 44, 85);
+  width: 100%;
+  padding-inline-end: unset;
+}
+.info a {
+  margin-top: 10px;
+  text-align: left;
+  text-decoration: none;
+  color: black;
+  font-size: 12px;
+  font-weight: bold;
+}
+/* .info button {
+  height: 50px;
+  margin-top: 20px;
+  border: none;
+  color: rgb(22, 24, 35);
+  background-color: rgb(234, 71, 74);
+  pointer-events: none;
+  font-weight: bold;
+  font-size: 20px;
+} */
+.body .desc {
+  margin-bottom: 20px;
+  width: 100%;
+  position: absolute;
+  text-align: center;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.desc hr {
+  margin-bottom: 20px;
+}
+.desc a {
+  text-decoration: none;
+  color: red;
+  font-weight: bold;
+}
+.modal .body img {
+  width: 100%;
 }
 
-.App-link {
-  color: #61dafb;
+.modal .close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  display: flex;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: none;
+  background: #ebebeb;
+  cursor: pointer;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.modal .close-btn i {
+  font-size: 20px;
+  color: #666;
+  margin: auto;
 }
